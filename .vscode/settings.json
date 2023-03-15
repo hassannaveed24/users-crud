@@ -1,0 +1,22 @@
+{
+    "tabnine.experimentalAutoImports": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "[prisma]": {
+        "editor.defaultFormatter": "Prisma.prisma"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "yaml.schemas": {
+        "file:///c%3A/Users/techinn/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "redhat.telemetry.enabled": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on"
+}
