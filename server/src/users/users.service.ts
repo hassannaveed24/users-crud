@@ -4,16 +4,16 @@ import { Model } from 'mongoose';
 import { faker } from '@faker-js/faker';
 import { init } from '@paralleldrive/cuid2';
 
-import { CreateUserDto } from './dto/user.dto';
 import { User, UserRoles } from './schemas/user.schema';
+import { CreateUserDto } from './dto/user.dto';
 
 @Injectable()
 export class UsersService {
   constructor(@InjectModel('User') private readonly userModel: Model<User>) {}
 
-  async create(createUserDto: CreateUserDto | CreateUserDto[]) {
-    const operations = Array.isArray(createUserDto)
-      ? createUserDto.map((user) => ({
+  async create(body: CreateUserDto | CreateUserDto[]) {
+    const operations = Array.isArray(body)
+      ? body.map((user) => ({
           updateOne: {
             filter: { _id: user._id },
             update: { ...user },
@@ -23,8 +23,8 @@ export class UsersService {
       : [
           {
             updateOne: {
-              filter: { _id: createUserDto._id },
-              update: { ...createUserDto },
+              filter: { _id: body._id },
+              update: { ...body },
               upsert: true,
             },
           },

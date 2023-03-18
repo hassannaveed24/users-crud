@@ -18,7 +18,7 @@ export interface User {
   email: string;
   address?: Address;
   role: UserRoles;
-  phoneNo: string;
+  phoneNo?: string;
 }
 const addressSchema = new mongoose.Schema({
   addressLine1: { type: String },

@@ -19,5 +19,3 @@ const UserSchema = z.object({
   phoneNo: z.string().optional(),
 });
 export class CreateUserDto extends createZodDto(UserSchema) {}
-
-// export type IUser = z.infer<typeof UserSchema>;
