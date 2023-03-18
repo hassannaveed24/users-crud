@@ -1,12 +1,9 @@
 import { z } from 'zod';
 import { createZodDto } from 'nestjs-zod';
-
-export enum UserRoles {
-  ADMIN = 'ADMIN',
-  MEMBER = 'MEMBER',
-}
+import { UserRoles } from '../schemas/user.schema';
 
 const UserSchema = z.object({
+  _id: z.string(),
   name: z.string(),
   email: z.string(),
   address: z

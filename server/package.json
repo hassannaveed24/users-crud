@@ -21,11 +21,13 @@
     "seed:users": "ts-node src/seed.ts seed-users"
   },
   "dependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/mapped-types": "*",
     "@nestjs/mongoose": "^9.2.2",
     "@nestjs/platform-express": "^9.0.0",
+    "@paralleldrive/cuid2": "^2.2.0",
     "mongoose": "^7.0.2",
     "nestjs-zod": "^1.2.3",
     "reflect-metadata": "^0.1.13",
