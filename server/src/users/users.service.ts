@@ -40,7 +40,7 @@ export class UsersService {
       this.userModel.countDocuments().lean(),
     ]);
 
-    return { data, total };
+    return { data, total, skip, take };
   }
 
   async findOne(id: string) {

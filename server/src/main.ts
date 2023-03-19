@@ -8,11 +8,11 @@ async function bootstrap() {
 
   const options = new DocumentBuilder()
     .setTitle('Users CRUD')
-    .setDescription('This is users crud example')
+    .setDescription('This is users crud api documentation.')
     .setVersion('1.0.0')
     .build();
   const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('documentation', app, document);
 
   await app.listen(3000);
 }

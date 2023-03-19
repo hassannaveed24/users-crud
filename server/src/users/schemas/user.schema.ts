@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 
-interface Address {
+export interface Address {
   addressLine1: string;
   addressLine2: string;
   city: string;
