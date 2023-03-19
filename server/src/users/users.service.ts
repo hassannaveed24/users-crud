@@ -5,7 +5,7 @@ import { faker } from '@faker-js/faker';
 import { init } from '@paralleldrive/cuid2';
 
 import { User, UserRoles } from './schemas/user.schema';
-import { CreateUserDto } from './dto/user.dto';
+import { CreateUserDto, FindAllQueryDto } from './dto/user.dto';
 
 @Injectable()
 export class UsersService {
@@ -34,13 +34,13 @@ export class UsersService {
     return;
   }
 
-  async findAll(skip: number, take: number) {
+  async findAll(query: FindAllQueryDto) {
     const [data, total] = await Promise.all([
-      this.userModel.find().skip(skip).limit(take).lean(),
+      this.userModel.find().skip(query.skip).limit(query.take).lean(),
       this.userModel.countDocuments().lean(),
     ]);
 
-    return { data, total, skip, take };
+    return { data, total, skip: query.skip, take: query.take };
   }
 
   async findOne(id: string) {
