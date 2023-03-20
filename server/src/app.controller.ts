@@ -1,10 +1,10 @@
 import { Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 
-import { ApiBody, ApiCreatedResponse } from '@nestjs/swagger';
+import { ApiBody, ApiCreatedResponse, ApiBearerAuth, ApiTags, ApiSecurity } from '@nestjs/swagger';
 import { AppService } from './app.service';
 import { AuthService } from './auth/auth.service';
-import { AuthenticatedGuard } from './auth/guards/authenticated.guard';
+import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
 import { LoginDto, LoginResponseDto } from './dto/login.dto';
 
 @Controller()
@@ -16,6 +16,7 @@ export class AppController {
     return this.appService.getHello();
   }
 
+  @ApiTags('Auth')
   @UseGuards(AuthGuard('local'))
   @Post('login')
   @ApiCreatedResponse({
@@ -27,7 +28,9 @@ export class AppController {
   }
 
   @Get('protected')
-  @UseGuards(AuthenticatedGuard)
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
+  @ApiSecurity('bearer')
   getProtected(): string {
     return 'Protected';
   }
