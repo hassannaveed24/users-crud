@@ -1,9 +1,9 @@
 import { Controller, Get, Post, Body, Param, Delete, Query } from '@nestjs/common';
 import { ApiCreatedResponse, ApiOkResponse, ApiBody, ApiTags, ApiBearerAuth, ApiSecurity } from '@nestjs/swagger/dist';
+import { UseGuards } from '@nestjs/common/decorators';
 
 import { UsersService } from './users.service';
 import { CreateUserDto, FindAllQueryDto } from './dto/user.dto';
-import { UseGuards } from '@nestjs/common/decorators';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 
 @ApiTags('Users')
