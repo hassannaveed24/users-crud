@@ -82,4 +82,9 @@ export class UsersService {
 
     await this.create(users);
   }
+
+  async findByEmail(email: string): Promise<any> {
+    const user = await this.userModel.findOne({ email }).lean();
+    return user;
+  }
 }
