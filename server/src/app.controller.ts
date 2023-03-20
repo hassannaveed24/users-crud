@@ -4,6 +4,7 @@ import { AuthGuard } from '@nestjs/passport';
 import { ApiBody, ApiCreatedResponse } from '@nestjs/swagger';
 import { AppService } from './app.service';
 import { AuthService } from './auth/auth.service';
+import { AuthenticatedGuard } from './auth/guards/authenticated.guard';
 import { LoginDto, LoginResponseDto } from './dto/login.dto';
 
 @Controller()
@@ -26,7 +27,7 @@ export class AppController {
   }
 
   @Get('protected')
-  @UseGuards(AuthGuard('jwt'))
+  @UseGuards(AuthenticatedGuard)
   getProtected(): string {
     return 'Protected';
   }
