@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEnum, IsEmail, IsString, IsNotEmpty, IsObject, ValidateNested, IsNumber } from 'class-validator';
+import { IsEnum, IsEmail, IsString, IsNotEmpty, IsObject, ValidateNested, IsNumber, IsNumberString } from 'class-validator';
 import { Type } from 'class-transformer';
 
 import { UserRoles } from '../schemas/user.schema';
@@ -61,11 +61,11 @@ export class CreateUserDto {
 }
 
 export class FindAllQueryDto {
-  @IsNumber()
+  @IsNumberString()
   @ApiProperty({ example: 50 })
   skip: number;
 
-  @IsNumber()
+  @IsNumberString()
   @ApiProperty({ example: 10 })
   take: number;
 }

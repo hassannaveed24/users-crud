@@ -35,12 +35,17 @@ export class UsersService {
   }
 
   async findAll(query: FindAllQueryDto) {
-    const [data, total] = await Promise.all([
-      this.userModel.find().skip(query.skip).limit(query.take).lean(),
+    const [data, totalCount] = await Promise.all([
+      this.userModel.find({}, 'name email').skip(query.skip).limit(query.take).sort({ updatedAt: -1 }).lean(),
       this.userModel.countDocuments().lean(),
     ]);
 
-    return { data, total, skip: query.skip, take: query.take };
+    return {
+      data: data.map((row, index) => ({ ...row, dbIndex: +query.skip + index })),
+      totalCount,
+      skip: query.skip,
+      take: query.take,
+    };
   }
 
   async findOne(id: string) {
