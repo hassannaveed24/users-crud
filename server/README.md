@@ -26,6 +26,11 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+Backend with User CRUD
+JWT strategy for authentication
+Secured end points with jwt
+Script to seed database by 10000 users
+
 ## Installation
 
 ```bash
