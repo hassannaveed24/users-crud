@@ -84,7 +84,7 @@ const Form: FC<{ opened: boolean; close: () => void; mode: FormMode; userId?: st
             _id: user.data?._id || init({ length: 12 })(),
             name: user.data?.name || "",
             address: {
-              _id: user.data?.address?._id || "",
+              _id: user.data?.address?._id || init({ length: 12 })(),
               addressLine1: user.data?.address?.addressLine1 || "",
               addressLine2: user.data?.address?.addressLine2 || "",
               city: user.data?.address?.city || "",

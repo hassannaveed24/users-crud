@@ -25,11 +25,6 @@ class MiscUtils {
     return parseInt((date.getTime() / 1000).toFixed(0));
   }
 
-  public static sanitiseBucketURL(url: string | null | undefined) {
-    if (!url) return undefined;
-    return url.replace(process.env.NEXT_PUBLIC_S3_BUCKET_DOMAIN, process.env.NEXT_PUBLIC_S3_BUCKET_CDN);
-  }
-
   public static getRandomNumberBetween(min: number, max: number) {
     // find diff
     const difference = max - min;

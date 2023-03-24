@@ -22,6 +22,8 @@ export interface IUser {
   address?: Address;
   phoneNo?: string;
   role?: UserRoles;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 class AddressDto {

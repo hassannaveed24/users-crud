@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import { Hydrate, QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Provider } from "react-redux";
-import store, { useSelector } from "@/state/store";
+import store from "@/state/store";
 import { FC } from "react";
 import { EnhancedNextPage } from "@/types/next";
 import { Router, useRouter } from "next/router";
@@ -16,7 +16,7 @@ import "react-perfect-scrollbar/dist/css/styles.css";
 import "../assets/styles/tailwind.css";
 
 import { MantineWrapper } from "@/utils/mantine";
-import { GetSelectedWorkspace } from "@/data/workspace/get-workspaces.data";
+
 import { ModalsProvider } from "@mantine/modals";
 
 export const qc = new QueryClient({
@@ -44,21 +44,12 @@ const RTKApp: FC<EnhancedAppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
   const getLayout = Component.getLayout ?? ((page) => page);
 
-  const selectedWorkspace = useSelector((state) => {
-    const { allWorkspaces, selectedWorkspaceId } = state.workspace;
-    if (allWorkspaces.length <= 0 || !selectedWorkspaceId) return null;
-    return GetSelectedWorkspace(selectedWorkspaceId, { allWorkspaces });
-  });
-
-  const workspaceFavicon = selectedWorkspace?.workspaceFavicon || "/favicon.ico";
-  const faviconURL = workspaceFavicon.includes(".ico") ? workspaceFavicon : "/favicon.ico";
-
   return (
     <>
       <Head>
         <title>Users CRUD</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <link rel="icon" href={faviconURL} />
+        <link rel="icon" href={"/favicon.ico"} />
       </Head>
 
       <MantineWrapper>
