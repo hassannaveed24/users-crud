@@ -21,7 +21,8 @@
     "seed:users": "ts-node src/seed.ts seed-users"
   },
   "engines": {
-    "node": "18.15.0"
+    "node": "18.15.0",
+    "yarn": "1.22.19"
   },
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
