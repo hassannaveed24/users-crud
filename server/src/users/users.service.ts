@@ -80,12 +80,14 @@ export class UsersService {
 
   //seed 10000 users to database
   async seed() {
+    console.log('seed started');
     const users: User[] = [];
     for (let index = 0; index < 10000; index++) {
       users.push(this.getRandomUser());
     }
 
     await this.create(users);
+    console.log('seed completed');
   }
 
   async findByEmail(email: string): Promise<any> {

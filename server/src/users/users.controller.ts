@@ -4,7 +4,7 @@ import { UseGuards } from '@nestjs/common/decorators';
 
 import { UsersService } from './users.service';
 import { CreateUserDto, FindAllQueryDto } from './dto/user.dto';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { JwtAuthGuard } from '../../src/auth/guards/jwt-auth.guard';
 
 @ApiTags('Users')
 @UseGuards(JwtAuthGuard)
