@@ -41,7 +41,7 @@ export class UsersService {
     ]);
 
     return {
-      data: data.map((row, index) => ({ ...row, dbIndex: +query.skip + index })),
+      data: data.map((row, index) => ({ ...row })),
       totalCount,
       skip: query.skip,
       take: query.take,
