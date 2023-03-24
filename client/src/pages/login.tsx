@@ -2,7 +2,7 @@ import { LoginMutationPayload } from "@/data/user/login.data";
 import AuthClient from "@/services/auth-client";
 import ErrorManager from "@/services/error-manager";
 import { FieldProps } from "@/types/formik";
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 import { Flex, TextInput, Button, Container, Text } from "@mantine/core";
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
@@ -37,7 +37,7 @@ export default function Login() {
   );
   const auth = useAuth();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
 
     if (accessToken && !auth.user) {
