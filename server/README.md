@@ -30,6 +30,7 @@
 <p>JWT strategy for authentication</p>
 <p>Secured end points with jwt</p>
 <p>Script to seed database by 10000 users</p>
+<p>Swagger API docs on /api</p>
 
 ## Installation
 
