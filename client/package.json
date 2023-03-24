@@ -13,8 +13,6 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.254.0",
-    "@aws-sdk/lib-storage": "^3.258.0",
     "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.10.6",
     "@emotion/server": "^11.10.0",
