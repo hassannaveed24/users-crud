@@ -26,6 +26,7 @@ const useHover = (opts?: { onMouseOver?: MouseEventHandler; onMouseOut?: MouseEv
         node.removeEventListener("mouseout", handleMouseOut);
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return [ref, value] as [MutableRefObject<null | HTMLElement>, boolean];

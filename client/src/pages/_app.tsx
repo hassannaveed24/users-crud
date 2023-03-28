@@ -1,8 +1,6 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ToastContainer } from "react-toastify";
-
-import "react-toastify/dist/ReactToastify.min.css";
 import { Hydrate, QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Provider } from "react-redux";
 import store from "@/state/store";
@@ -10,14 +8,12 @@ import { FC } from "react";
 import { EnhancedNextPage } from "@/types/next";
 import { Router, useRouter } from "next/router";
 import nprogress from "nprogress";
+import { MantineWrapper } from "@/utils/mantine";
+import { ModalsProvider } from "@mantine/modals";
 import "react-loading-skeleton/dist/skeleton.css";
 import "react-perfect-scrollbar/dist/css/styles.css";
-
+import "react-toastify/dist/ReactToastify.min.css";
 import "../assets/styles/tailwind.css";
-
-import { MantineWrapper } from "@/utils/mantine";
-
-import { ModalsProvider } from "@mantine/modals";
 
 export const qc = new QueryClient({
   defaultOptions: {

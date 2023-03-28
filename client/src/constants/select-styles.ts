@@ -1,5 +1,5 @@
 import cls from "classnames";
-import { GroupBase, PlaceholderProps } from "react-select";
+import { GroupBase } from "react-select";
 import { ClassNamesConfig, StylesConfig } from "react-select/dist/declarations/src/styles";
 
 export const getDefaultSelectClassNames = <

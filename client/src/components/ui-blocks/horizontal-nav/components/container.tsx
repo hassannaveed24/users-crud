@@ -1,6 +1,5 @@
 import { createStyles } from "@mantine/core";
-import { Box, ScrollArea } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
+import { Box } from "@mantine/core";
 import React, { FC, PropsWithChildren } from "react";
 
 const useStyles = createStyles(() => {

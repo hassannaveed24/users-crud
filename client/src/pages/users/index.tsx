@@ -3,7 +3,6 @@ import { IconTrash, IconPencil, IconEye, IconPlus } from "@tabler/icons-react";
 import { CSSProperties, FC, useState } from "react";
 import { modals } from "@mantine/modals";
 import { useDisclosure } from "@mantine/hooks";
-
 import { useUsers } from "@/data/users/get-users.data";
 import DashboardLayout from "@/layouts/dashboard.layout";
 import { EnhancedNextPage } from "@/types/next";
